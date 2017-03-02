@@ -12,20 +12,21 @@ class WheelOfFortune
 
   def to_s
     p @phrase
-    render_string = ""
+    render_string = " "
     @phrase.each_char do |e|
 
-      if @guesses.include? e.downcase
+    if @guesses.include? e.downcase
         render_string << e
       elsif e == " "
         render_string << " "
       else
         render_string << "_"
       end
-    end
-       $finished_string ==render_string
+
+       $finished_string == render_string
        return $finsihed_string
-  end
+    end
+   end
 
 
 
@@ -42,18 +43,18 @@ class WheelOfFortune
   def game_over?
     return $finished_string == @phrase
   end
-
-
-
-# Checks to see if we executed this file from the command-line
-# e.g. `ruby simple_jepordy.rb`
-if __FILE__ == $0
-
-  # DRIVER CODE
-  j = WheelOfFortune.new( {theme: "card games", phrase: "Go fish"} )
-  j.can_i_have?("g")
-  j.can_i_have?("o")
-  p j
-  puts j # calls j.to_s
-
 end
+
+#
+# Checks to see if we executed this file from the command-line
+# # e.g. `ruby simple_jepordy.rb`
+# if __FILE__ == $0
+#
+#   # DRIVER CODE
+#   j = WheelOfFortune.new( {theme: "card games", phrase: "Go fish"} )
+#   j.can_i_have?("g")
+#   j.can_i_have?("o")
+#   p j
+#   puts j # calls j.to_s
+#
+# end
